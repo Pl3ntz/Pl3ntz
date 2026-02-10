@@ -1,30 +1,47 @@
-## Hello, i'm Vitor Plentz!!
+# Vitor Plentz
 
-<div align="center">
-  <a href="https://github.com/vpl3ntz">
-  <img height="120em" src="https://github-readme-stats.vercel.app/api?username=pl3ntz&show_icons=true&theme=yeblu&include_all_commits=true&count_private=true"/>
-  <img height="100em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=pl3ntz&layout=compact&langs_count=7&theme=yeblu"/>
-</div> 
-  
-<div style="display: inline_block"><br>
-  <img align="center" alt="Vitor-Php" height="80" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg">
-  <img align="center" alt="Vitor-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg">
-  <img align="center" alt="Rafa-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="Vitor-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-  <img align="center" alt="Vitor-Docker" height="80" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg">
-  <img align="center" alt="Vitor-GitLab" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gitlab/gitlab-original.svg">
-  <img align="center" alt="Vitor-Git" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg">
-  <img align="center" alt="Vitor-MySql" height="120" width="60" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg">
-  <img align="center" alt="Vitor-Bootstrap" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg">
-  <img align="center" alt="Vitor-JQuery" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jquery/jquery-plain-wordmark.svg">
-  
-  ## 
-  
- <div>
- <a href="https://www.linkedin.com/in/vitor-plentz/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-  <a href="https://wa.link/qi64s6" target="_blank"><img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"></a>
- </div>
-  
-  ##
-  
- ![Snake animation](https://github.com/pl3ntz/pl3ntz/blob/output/github-contribution-grid-snake.svg)
+Indie maker from Brazil. Building SaaS products solo.
+
+## Products
+
+### Rosetta
+Generate civil engineering technical documentation in minutes, not hours.
+Memorial descritivo generator for industrial construction.
+
+**Stack:** FastAPI, PostgreSQL, React, TypeScript, Stripe
+
+[Try Rosetta →](https://rosetta.vitorplentz.com.br)
+
+### Bora La
+Find the best remote work spots across Brazil.
+Cafes, coworkings, and libraries rated by remote workers.
+
+**Stack:** FastAPI, React, Vite
+
+[Try Bora La →](https://borala.vitorplentz.com.br)
+
+## Stack
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
+
+## Open Source
+
+- [claude-code-config](https://github.com/Pl3ntz/claude-code-config) — Production-ready Claude Code configurations
+- [claude-dotfiles](https://github.com/Pl3ntz/claude-dotfiles) — Claude Code CLI dotfiles and status line
+- [claude-local-memory](https://github.com/Pl3ntz/claude-local-memory) — Real-time learning for Claude Code
+
+## Connect
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitor-plentz/)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=flat&logo=whatsapp&logoColor=white)](https://wa.link/qi64s6)
+
+---
+
+![Snake animation](https://github.com/pl3ntz/pl3ntz/blob/output/github-contribution-grid-snake.svg)
