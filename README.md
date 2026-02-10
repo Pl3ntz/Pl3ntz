@@ -78,13 +78,13 @@ Platform for remote workers to find and review the best work spots (cafes, cowor
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=Pl3ntz&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&count_private=true" />
-  <img width="48%" src="https://github-readme-stats.vercel.app/api?username=Pl3ntz&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&count_private=true" alt="GitHub Stats" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-five.vercel.app/api?username=Pl3ntz&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&count_private=true" />
+  <img width="48%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=Pl3ntz&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&count_private=true" alt="GitHub Stats" />
 </picture>
 &nbsp;
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com?user=Pl3ntz&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" />
-  <img width="48%" src="https://github-readme-streak-stats.herokuapp.com?user=Pl3ntz&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" alt="GitHub Streak" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=Pl3ntz&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" />
+  <img width="48%" src="https://streak-stats.demolab.com?user=Pl3ntz&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" alt="GitHub Streak" />
 </picture>
 
 </div>
