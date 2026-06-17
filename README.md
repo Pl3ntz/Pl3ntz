@@ -1,104 +1,111 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1a1b27&height=120&section=header" />
+# Vitor Plentz · @Pl3ntz
 
-<div align="center">
+### Software Engineer — Python/FastAPI · TypeScript · AI systems
 
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=4000&pause=1000&color=58A6FF&center=true&vCenter=true&repeat=true&width=435&height=45&lines=Vitor+Plentz" alt="Typing SVG" />
-</a>
+> **Open to remote engineering roles** (LATAM / global) · GMT-3, overlap-friendly with US East / EU West · Santa Catarina, Brazil
 
-**Full Stack Developer & CTO**
+I build backend-heavy systems that ship to production: AI agent orchestration, full-stack SaaS, and native macOS. Depth in Python backend and LLM agent systems; breadth across the stack — from a LaTeX-rendering PDF pipeline down to a reverse-engineered HID protocol. The projects below are ordered by how directly they map to a hiring need, not by recency.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vitor-plentz/)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white)](https://wa.link/qi64s6)
-
-</div>
+**Reach me:** [LinkedIn](https://www.linkedin.com/in/vitor-plentz) · [GitHub](https://github.com/Pl3ntz)
 
 ---
 
-### About
+## Selected work
 
-Full stack developer focused on building scalable SaaS products and business automation systems. Experienced with multi-tenant architectures, AI integrations, real-time systems, and end-to-end product development — from database design to deployment.
+### [quarterdeck](https://github.com/Pl3ntz/quarterdeck) · Python
 
----
+> An orchestration framework for AI coding agents: 26 agents across 8 squads, executed in parallel waves.
 
-### Projects
+The single-agent default serializes multi-step engineering work into one bottleneck. Quarterdeck decomposes a request into **waves** — within a wave, 3–5 specialized agents run in parallel (reconnaissance, validation); waves run sequentially only when there's a true data dependency. The design rests on a few deliberate constraints:
 
-<table>
-<tr>
-<td width="50%" valign="top">
+- **Hierarchy as an invariant** — agents never act on their own; an orchestrator dispatches and synthesizes. This keeps a multi-agent system debuggable instead of emergent.
+- **Zone assignment before parallel writes** — write-capable agents get explicit file ownership so no two touch the same file in one wave. Read-only reviewers (quality gates) skip this and always parallelize.
+- **Deterministic routing + standardized output** — requests route to squads by signal; every agent returns the same output contract, so synthesis doesn't depend on per-agent formatting.
 
-**Rosetta** — [rosetta.vitorplentz.com.br](https://rosetta.vitorplentz.com.br)
-
-Automated generation of civil engineering technical documentation (memorial descritivo) for industrial construction. Reduces hours of manual work to minutes.
-
-`FastAPI` `PostgreSQL` `React` `TypeScript` `Stripe`
-
-</td>
-<td width="50%" valign="top">
-
-**Bora La** — [borala.vitorplentz.com.br](https://borala.vitorplentz.com.br)
-
-Platform for remote workers to find and review the best work spots (cafes, coworkings, libraries) across Brazilian cities.
-
-`FastAPI` `React` `Vite` `Tailwind`
-
-</td>
-</tr>
-</table>
+`Python` · multi-agent systems · parallel orchestration · routing
 
 ---
 
-### Tech Stack
+### [forja](https://github.com/Pl3ntz/forja) · TypeScript
 
-<div align="center">
+> A CV-builder SaaS with live preview and LaTeX → PDF export — no local toolchain, no vendor lock-in.
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=0d1117)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+A full-stack product running in production. The engineering load sits in three places:
 
-</div>
+- **LaTeX PDF pipeline under concurrency control** — PDFs compile with Tectonic (XeTeX) from EJS → LaTeX templates; a `p-queue` with configurable `PDF_CONCURRENCY` caps server load, and LaTeX-character escaping closes off template injection.
+- **End-to-end auth & security** — Better Auth with DB-backed sessions tracking IP and User-Agent, user/admin roles, per-route fixed-window rate limiting, httpOnly cookies, Zod validation on every endpoint, and parameterized queries through Drizzle ORM.
+- **Applied AI** — CV parsing, ATS scoring, and translation via Groq / Llama 3.3 70B, with a 24h in-memory TTL cache on ATS scores to cut redundant API calls.
+
+`Hono` · `React 19` · `Vite` · `Better Auth` · `Drizzle ORM` · `PostgreSQL` · `Tectonic`
 
 ---
 
-### Open Source
+### [local-mind](https://github.com/Pl3ntz/local-mind) · JavaScript
 
-- **[claude-code-config](https://github.com/Pl3ntz/claude-code-config)** — Production-ready Claude Code configurations: agents, skills, hooks, and rules
-- **[claude-dotfiles](https://github.com/Pl3ntz/claude-dotfiles)** — Claude Code CLI dotfiles and status line configurations
-- **[claude-local-memory](https://github.com/Pl3ntz/claude-local-memory)** — Real-time learning and persistent memory for Claude Code
+> Local-first persistent memory for AI coding agents — SQLite, zero cloud, zero API keys.
 
----
+A clean-room rebuild: same goal as a cloud-based predecessor, opposite architecture — local SQLite instead of a cloud API.
 
-### GitHub Stats
+- **Custom relevance scoring** — ranking by `BM25 * 0.7 + Recency * 0.3`, with recency decaying as `e^(-0.15t)` (≈4.6-day half-life). Severity tunes the decay: `CRITICAL` findings persist ~35 days, `INFO` decays in ~3.5.
+- **Data engineering** — a 9-table SQLite schema with FTS5 full-text search and incremental transcript capture by byte-offset (only new bytes are read).
+- **Test rigor** — 18 suites / 310 tests, Biome for lint/format, esbuild for builds.
 
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-sigma-five.vercel.app/api?username=Pl3ntz&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&count_private=true" />
-  <img width="48%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=Pl3ntz&show_icons=true&hide_border=true&bg_color=0d1117&title_color=58A6FF&text_color=c9d1d9&icon_color=58A6FF&count_private=true" alt="GitHub Stats" />
-</picture>
-&nbsp;
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=Pl3ntz&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" />
-  <img width="48%" src="https://streak-stats.demolab.com?user=Pl3ntz&hide_border=true&background=0d1117&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF&sideLabels=c9d1d9&currStreakNum=c9d1d9&sideNums=c9d1d9&dates=8b949e" alt="GitHub Streak" />
-</picture>
-
-</div>
+`JavaScript` · `SQLite` · `FTS5` · information retrieval
 
 ---
 
-<div align="center">
+## Native macOS — proof of low-level range
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pl3ntz/Pl3ntz/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pl3ntz/Pl3ntz/output/github-snake.svg" />
-  <img alt="Snake animation" src="https://raw.githubusercontent.com/Pl3ntz/Pl3ntz/output/github-snake.svg" />
-</picture>
+These ship the same product instincts down to the protocol and FFI layer.
 
-</div>
+### [orelhao](https://github.com/Pl3ntz/orelhao) · Swift / Objective-C++
 
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1a1b27&height=120&section=footer" />
+> A native macOS SIP softphone — *"the MicroSIP of the Mac."* Engine: PJSIP 2.17.
+
+Low-level systems work across a three-language boundary. Three decisions carried it:
+
+- **A clean FFI boundary** — PJSUA2 (C++) is subclassed in Objective-C++ and exposed to Swift as a pure Obj-C delegate of immutable value objects, so C++ never leaks above the bridge.
+- **Threading discipline over GCD + pjlib** — one serial dispatch queue owns every PJSIP call; since GCD doesn't pin threads, each block re-registers via `pj_thread_register` before touching pjlib — the fix for intermittent asserts that only reproduce under load.
+- **Testable against a frozen protocol** — the whole UI runs against a `SIPEngine` protocol; a `FakeSIPEngine` (`ORELHAO_FAKE_ENGINE=1`) made the UI buildable and demoable before the real engine existed.
+
+The README's *hard-won gotchas* go deeper: port 5060 self-answering, INVITEs over 1300 bytes silently dropping to TCP per RFC 3261 §18.1.1, UDP undelivered under Docker Desktop with `network_mode: host`.
+
+`Swift` · `Objective-C++` · `SwiftUI` · `PJSIP` · SIP / RTP
+
+---
+
+### [OpenSharkMacOS](https://github.com/Pl3ntz/OpenSharkMacOS) · Swift
+
+> A macOS configurator for the Attack Shark R1 mouse, built on a reverse-engineered HID protocol.
+
+The vendor ships Windows-only software; the protocol was reversed and documented from scratch (`docs/PROTOCOL.md`).
+
+- **HID reverse engineering** — a vendor HID interface (usage page 1 / usage `0x80`, 64-byte feature reports); button remaps write via feature report `0x08`, firmware ACKs on `0x03`. Talks to the device directly over IOKit — no third-party software at runtime.
+- **Layered design + golden-vector tests** — `R1Kit` holds protocol + IOKit transport with no UI (`ReportBuilder`, `HidTransport`, `ScrollInverter`); CLI and SwiftUI app consume the kit; report encoding is locked down by golden-vector codec tests.
+- **An OS-level workaround for a firmware gap** — the firmware has no native scroll-invert, so per-device inversion runs macOS-side through a `CGEventTap` login agent, leaving trackpad natural scrolling untouched.
+
+`Swift` · `IOKit` · HID protocol · reverse engineering
+
+---
+
+## Also public
+
+| Project | What it is |
+|---|---|
+| [tributometro](https://github.com/Pl3ntz/tributometro) · TypeScript | A Brazilian tax-transparency calculator. |
+| [ascii-art](https://github.com/Pl3ntz/ascii-art) | A 3D Möbius strip rendered in ASCII with Phong shading. |
+| [claude-dotfiles](https://github.com/Pl3ntz/claude-dotfiles) / [claude-code-config](https://github.com/Pl3ntz/claude-code-config) | Claude Code configuration. |
+
+---
+
+## Stack
+
+**Backend & AI** — Python · FastAPI · LLM agents (Claude Code) · Groq / Llama
+**Web** — TypeScript · Hono · React · Vite · Node · Drizzle ORM
+**Systems** — Swift · Objective-C++ · IOKit · SwiftUI
+**Data** — PostgreSQL · SQLite · FTS5
+
+---
+
+**Open to remote engineering roles, LATAM or global — backend-heavy or full-stack.**
+The fastest way to reach me is [LinkedIn](https://www.linkedin.com/in/vitor-plentz) · [GitHub](https://github.com/Pl3ntz)
