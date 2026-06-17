@@ -10,6 +10,14 @@ I build backend-heavy systems that ship to production: AI agent orchestration, f
 
 ---
 
+## Currently
+
+- **quarterdeck** — multi-agent orchestration for Claude Code
+- **forja** — CV-builder SaaS, live preview + LaTeX → PDF
+- **local-mind** — local-first memory for AI agents
+
+---
+
 ## Selected work
 
 ### [quarterdeck](https://github.com/Pl3ntz/quarterdeck) · Python
