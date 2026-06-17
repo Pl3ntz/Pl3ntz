@@ -6,7 +6,7 @@
 
 I build backend-heavy systems that ship to production: AI agent orchestration, full-stack SaaS, and native macOS. Depth in Python backend and LLM agent systems; breadth across the stack — from a LaTeX-rendering PDF pipeline down to a reverse-engineered HID protocol. The projects below are ordered by how directly they map to a hiring need, not by recency.
 
-**Reach me:** [LinkedIn](https://www.linkedin.com/in/vitor-plentz) · [GitHub](https://github.com/Pl3ntz)
+**Reach me:** [LinkedIn](https://www.linkedin.com/in/vitor-plentz)
 
 ---
 
@@ -108,4 +108,4 @@ The vendor ships Windows-only software; the protocol was reversed and documented
 ---
 
 **Open to remote engineering roles, LATAM or global — backend-heavy or full-stack.**
-The fastest way to reach me is [LinkedIn](https://www.linkedin.com/in/vitor-plentz) · [GitHub](https://github.com/Pl3ntz)
+The fastest way to reach me is [LinkedIn](https://www.linkedin.com/in/vitor-plentz)
