@@ -6,7 +6,7 @@
 
 I design, build and operate LLM systems that real users depend on. Not demos. For over two years I have been shipping AI features to production: multi-tenant agent platforms, text-to-SQL, RAG pipelines, routing cascades that cut cost, and guardrails that block prompt injection before it reaches the model. Evals, observability and failure modes are first-class concerns here. That is what separates a production system from a prototype.
 
-Much of my production work runs under NDA. The public repos below are what I can show. Sanitized case studies are available on request.
+My repositories are private, and much of the production work runs under NDA. The write-ups below describe systems I built and operate. Sanitized case studies, code walkthroughs and repo access are available on request.
 
 **Reach me:** [LinkedIn](https://www.linkedin.com/in/vitor-plentz)
 
@@ -14,11 +14,11 @@ Much of my production work runs under NDA. The public repos below are what I can
 
 ## Selected work
 
-### [quarterdeck](https://github.com/Pl3ntz/quarterdeck) · Python
+### quarterdeck · Python
 
 > Agent orchestration for Claude Code. 28 specialist agents in 8 squads, with guardrails that stop them from committing something wrong.
 
-The routing eval sits at 0.947 across 26 runs. Measured, reproducible, and honest about its own limits. Every number in the README links to how it is produced.
+The routing eval sits at 0.947 across 26 runs. Measured, reproducible, and honest about its own limits. Every number is traceable to how it is produced.
 
 - Agents never act on their own. An orchestrator dispatches and synthesizes. That keeps a multi-agent system debuggable instead of emergent.
 - Write-capable agents get explicit file ownership so no two touch the same file in one wave. Read-only reviewers always parallelize.
@@ -28,11 +28,11 @@ The routing eval sits at 0.947 across 26 runs. Measured, reproducible, and hones
 
 ---
 
-### [llmfoundry](https://github.com/Pl3ntz/llmfoundry) · Python
+### llmfoundry · Python
 
-> The AI engineering kit for DeepSeek. It turns opencode into a team: 12 specialist agents, 30 skills, living memory, quality gates. Built for $2.01 in total LLM spend.
+> An AI engineering kit for DeepSeek. It turns opencode into a team: 12 specialist agents, 30 skills, living memory, quality gates. Built for $2.01 in total LLM spend.
 
-This is the kit I use to ship AI features. Published so others can run the same stack.
+This is the kit I use to ship AI features.
 
 - 12 specialist agents (research, architecture, evals, security, database, reverse engineering) routed by task. One model doing everything is not the pattern here.
 - Living memory with local embeddings and recall injection. Agents persist decisions and gotchas across sessions without a cloud dependency.
@@ -43,9 +43,9 @@ This is the kit I use to ship AI features. Published so others can run the same 
 
 ---
 
-### [skeg](https://github.com/Pl3ntz/skeg) · TypeScript
+### skeg · TypeScript
 
-> An open-source proxy that repairs broken tool calls from local LLMs (Ollama, LM Studio) before they crash your session.
+> A proxy that repairs broken tool calls from local LLMs (Ollama, LM Studio) before they crash your session.
 
 A hard reliability problem, solved at the protocol layer.
 
@@ -57,7 +57,7 @@ A hard reliability problem, solved at the protocol layer.
 
 ---
 
-### [forja](https://github.com/Pl3ntz/forja) · TypeScript
+### forja · TypeScript
 
 > A CV-builder SaaS in production. Live preview, LaTeX to PDF export, no local toolchain, no vendor lock-in.
 
@@ -73,11 +73,11 @@ A hard reliability problem, solved at the protocol layer.
 
 The same production discipline, applied to native code. Proof of range beyond LLM.
 
-### [orelhao](https://github.com/Pl3ntz/orelhao) · Swift / Objective-C++
-A native macOS SIP softphone. The MicroSIP of the Mac. PJSIP 2.17 engine bridged through Objective-C++ into SwiftUI, threading discipline over GCD and pjlib, and a UI driven by a frozen `SIPEngine` protocol with a fake engine for tests. The README documents the hard-won gotchas: port 5060 self-answering, INVITEs over 1300 bytes silently dropping to TCP (RFC 3261 §18.1.1), UDP undelivered under Docker Desktop.
+### orelhao · Swift / Objective-C++
+A native macOS SIP softphone. The MicroSIP of the Mac. PJSIP 2.17 engine bridged through Objective-C++ into SwiftUI, threading discipline over GCD and pjlib, and a UI driven by a frozen `SIPEngine` protocol with a fake engine for tests. Documented gotchas include port 5060 self-answering, INVITEs over 1300 bytes silently dropping to TCP (RFC 3261 §18.1.1), and UDP undelivered under Docker Desktop.
 
-### [OpenSharkMacOS](https://github.com/Pl3ntz/OpenSharkMacOS) · Swift
-A macOS configurator for the Attack Shark R1 mouse, built on a reverse-engineered HID protocol documented from scratch in `docs/PROTOCOL.md`. Feature-report encoding is locked down by golden-vector codec tests. No third-party software at runtime.
+### OpenSharkMacOS · Swift
+A macOS configurator for the Attack Shark R1 mouse, built on a reverse-engineered HID protocol documented from scratch. Feature-report encoding is locked down by golden-vector codec tests. No third-party software at runtime.
 
 ---
 
