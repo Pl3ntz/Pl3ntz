@@ -1,93 +1,73 @@
 # Vitor Plentz · @Pl3ntz
 
-### AI Engineer · LLM systems in production · Python / FastAPI · evals, RAG, agents
+### AI Engineer · AI Platform Engineer · Forward Deployed Engineer
 
 > Open to remote AI / backend engineering roles, LATAM or global, paid in USD. GMT-3, with overlap-friendly hours for US East and EU West. Santa Catarina, Brazil.
 
-I design, build and operate LLM systems that real users depend on. Not demos. For over two years I have been shipping AI features to production: multi-tenant agent platforms, text-to-SQL, RAG pipelines, routing cascades that cut cost, and guardrails that block prompt injection before it reaches the model. Evals, observability and failure modes are first-class concerns here. That is what separates a production system from a prototype.
+I build and operate production AI systems end to end, from architecture and infrastructure through delivery and reliability. As founding and sole engineer at Aliança, I took a multi-tenant logistics platform from zero to paying clients; it now serves 445 users across 12 tenants on a roughly 60M-row PostgreSQL backbone.
+
+My focus is reliable LLM systems: RAG and text-to-SQL agents, evaluation, AI safety, multi-tenant isolation, event-driven pipelines, and provider resilience. My primary stack is Python, FastAPI, PostgreSQL, Redis, React, and TypeScript.
 
 My repositories are private, and much of the production work runs under NDA. The write-ups below describe systems I built and operate. Sanitized case studies, code walkthroughs and repo access are available on request.
 
-**Reach me:** [LinkedIn](https://www.linkedin.com/in/vitor-plentz)
+**Reach me:** [LinkedIn](https://www.linkedin.com/in/vitor-plentz) · [Portfolio](https://vitorplentz.com.br)
 
----
+## Agent harnesses
 
-## Selected work
+These are the engineering harnesses I use to make AI-assisted work bounded, observable and reproducible.
 
-### quarterdeck · Python
+### Keystone · Codex-native
 
-> Agent orchestration for Claude Code. 28 specialist agents in 8 squads, with guardrails that stop them from committing something wrong.
+A zero-runtime-dependency harness for disciplined Codex work. Sol owns investigation and decisions; bounded executors perform repository and specialist work. It routes capabilities, uses isolated worktrees, enforces RED/GREEN gates and PR-only delivery, and maintains durable context and security boundaries with measurable token budgets.
 
-The routing eval sits at 0.947 across 26 runs. Measured, reproducible, and honest about its own limits. Every number is traceable to how it is produced.
+`Python` · Codex · orchestration · worktrees · quality gates · security · token efficiency
 
-- Agents never act on their own. An orchestrator dispatches and synthesizes. That keeps a multi-agent system debuggable instead of emergent.
-- Write-capable agents get explicit file ownership so no two touch the same file in one wave. Read-only reviewers always parallelize.
-- Commits pass review, eval, suite and test. Each gate keys on a hash, so a stale check stops counting. 60 guardrail checks, zero model calls.
+### quarterdeck · Claude Code
+
+Agent orchestration for Claude Code: 28 specialist agents in 8 squads, with traceable routing evals and guardrails that stop agents from committing something wrong. Write-capable agents have explicit file ownership; commits pass review, eval, suite and test gates.
 
 `Python` · multi-agent systems · parallel orchestration · evals · routing
 
----
+### llmfoundry · OpenCode
 
-### llmfoundry · Python
+An AI engineering kit that turns OpenCode into a team: 12 specialist agents, 30 skills, local living memory and quality gates. It covers prompt engineering, evals, RAG pipelines, MCP development, observability and agent safety.
 
-> An AI engineering kit for DeepSeek. It turns opencode into a team: 12 specialist agents, 30 skills, living memory, quality gates. Built for $2.01 in total LLM spend.
+`Python` · agents · evals · memory · quality gates
 
-This is the kit I use to ship AI features.
-
-- 12 specialist agents (research, architecture, evals, security, database, reverse engineering) routed by task. One model doing everything is not the pattern here.
-- Living memory with local embeddings and recall injection. Agents persist decisions and gotchas across sessions without a cloud dependency.
-- Quality gates shipped as plugins: delegation guard, anti-delirium, verify guard, voice guard, publish guard. The same fail-closed discipline I apply to production LLM apps.
-- 30 skills covering prompt engineering, evals, RAG pipelines, MCP development, observability and agent safety.
-
-`Python` · agents · evals · memory · quality gates · DeepSeek
-
----
+## Production AI & reliability
 
 ### skeg · TypeScript
 
-> A proxy that repairs broken tool calls from local LLMs (Ollama, LM Studio) before they crash your session.
-
-A hard reliability problem, solved at the protocol layer.
-
-- Broken function calls from small local models get repaired in-flight instead of killing the agent loop. JSON repair, validation, and retry with feedback.
-- When a call cannot be repaired, the proxy degrades gracefully. It does not fail hard.
-- 59 tests pin the repair behavior. Works with Claude Code, OpenCode and Open WebUI.
+A proxy that repairs broken tool calls from local LLMs (Ollama, LM Studio) before they crash an agent loop. It performs JSON repair, validation and retry with feedback, with 59 tests pinning the repair behavior. Works with Claude Code, OpenCode and Open WebUI.
 
 `TypeScript` · LLM tool calling · JSON repair · reliability · local models
 
----
+## Product engineering
 
 ### forja · TypeScript
 
-> A CV-builder SaaS in production. Live preview, LaTeX to PDF export, no local toolchain, no vendor lock-in.
-
-- CV parsing, ATS scoring and translation run on Groq / Llama 3.3 70B, with a 24h TTL cache on scores so redundant API calls never happen.
-- Better Auth, DB-backed sessions, rate limiting, httpOnly cookies, Zod validation, parameterized queries through Drizzle ORM.
-- The LaTeX pipeline compiles with Tectonic (XeTeX) under a configurable `PDF_CONCURRENCY` cap. LaTeX-escaping closes off template injection.
+A CV-builder SaaS with live preview and LaTeX-to-PDF export. CV parsing, ATS scoring and translation run on Groq / Llama 3.3 70B; the product also uses Better Auth, DB-backed sessions, rate limiting, Zod validation, Drizzle ORM and PostgreSQL.
 
 `Hono` · `React` · `Vite` · `Better Auth` · `Drizzle ORM` · `PostgreSQL` · `Tectonic`
 
----
-
 ## Systems & low-level
 
-The same production discipline, applied to native code. Proof of range beyond LLM.
-
 ### orelhao · Swift / Objective-C++
-A native macOS SIP softphone. The MicroSIP of the Mac. PJSIP 2.17 engine bridged through Objective-C++ into SwiftUI, threading discipline over GCD and pjlib, and a UI driven by a frozen `SIPEngine` protocol with a fake engine for tests. Documented gotchas include port 5060 self-answering, INVITEs over 1300 bytes silently dropping to TCP (RFC 3261 §18.1.1), and UDP undelivered under Docker Desktop.
+
+A native macOS SIP softphone using PJSIP bridged through Objective-C++ into SwiftUI, with a frozen engine protocol and a fake engine for tests.
 
 ### OpenSharkMacOS · Swift
-A macOS configurator for the Attack Shark R1 mouse, built on a reverse-engineered HID protocol documented from scratch. Feature-report encoding is locked down by golden-vector codec tests. No third-party software at runtime.
 
----
+A macOS configurator for the Attack Shark R1 mouse, built on a reverse-engineered HID protocol with golden-vector codec tests.
 
 ## Stack
 
-**AI / LLM** · Python · FastAPI · Groq / Llama · agents (Claude Code) · RAG · evals · prompt-injection defense · cost optimization
-**Backend** · Python · FastAPI · PostgreSQL · SQLite · outbox patterns · rate limiting
+**AI / LLM** · Python · FastAPI · Groq / Llama · OpenAI · Anthropic · Whisper · RAG · schema retrieval · text-to-SQL · tool calling · MCP · evals · guardrails
+**Backend** · PostgreSQL · Redis · SQLAlchemy · Alembic · asyncpg · transactional outbox · RabbitMQ · rate limiting
 **Web** · TypeScript · Hono · React · Vite · Node · Drizzle ORM
-**Systems** · Swift · Objective-C++ · IOKit · SwiftUI · HID / SIP protocols
+**Infrastructure** · Docker · Linux · Cloudflare Tunnel · Caddy · CI/CD · Prometheus · Graylog
+**Languages** · English (B2) · Portuguese (Native)
 
 ---
 
-Open to remote AI and backend engineering roles, LATAM or global, paid in USD. The fastest way to reach me is [LinkedIn](https://www.linkedin.com/in/vitor-plentz).
+Open to remote AI and backend engineering roles, LATAM or global, paid in USD. [LinkedIn](https://www.linkedin.com/in/vitor-plentz) · [Portfolio](https://vitorplentz.com.br)
