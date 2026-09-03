@@ -34,7 +34,13 @@ An AI engineering kit that turns OpenCode into a team: 12 specialist agents, 30 
 
 `Python` · agents · evals · memory · quality gates
 
-## Production AI & reliability
+## Production AI systems
+
+### Aliança · Multi-tenant logistics / AI
+
+As founding and sole engineer, I built and operate the platform end to end: 445 users across 12 tenants on a roughly 60M-row PostgreSQL backbone. Its AI and reliability layer includes a 3-tier NLU cascade, Whisper transcription, provider failover, spend budgets, rate limits, prompt-injection defense, structured-output validation, and a confidence boundary that prevents the model from overriding verified data. The platform uses a transactional outbox instrumented with 25 Prometheus metrics; I am also building a schema-RAG text-to-SQL agent with a sqlglot AST guard.
+
+## LLM reliability tooling
 
 ### skeg · TypeScript
 
@@ -62,11 +68,11 @@ A macOS configurator for the Attack Shark R1 mouse, built on a reverse-engineere
 
 ## Stack
 
-**AI / LLM** · Python · FastAPI · Groq / Llama · OpenAI · Anthropic · Whisper · RAG · schema retrieval · text-to-SQL · tool calling · MCP · evals · guardrails
-**Backend** · PostgreSQL · Redis · SQLAlchemy · Alembic · asyncpg · transactional outbox · RabbitMQ · rate limiting
-**Web** · TypeScript · Hono · React · Vite · Node · Drizzle ORM
-**Infrastructure** · Docker · Linux · Cloudflare Tunnel · Caddy · CI/CD · Prometheus · Graylog
-**Languages** · English (B2) · Portuguese (Native)
+- **AI / LLM** · Python · FastAPI · Groq / Llama · OpenAI · Anthropic · Whisper · RAG · schema retrieval · text-to-SQL · tool calling · MCP · evals · guardrails
+- **Backend** · PostgreSQL · Redis · SQLAlchemy · Alembic · asyncpg · transactional outbox · RabbitMQ · rate limiting
+- **Web** · TypeScript · Hono · React · Vite · Node · Drizzle ORM
+- **Infrastructure** · Docker · Linux · Cloudflare Tunnel · Caddy · CI/CD · Prometheus · Graylog
+- **Languages** · English (B2) · Portuguese (Native)
 
 ---
 
