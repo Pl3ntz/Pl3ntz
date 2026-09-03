@@ -1,6 +1,4 @@
-# Vitor Plentz · @Pl3ntz
-
-### AI Engineer · AI Platform Engineer · Forward Deployed Engineer
+# AI Engineer · AI Platform Engineer · Forward Deployed Engineer
 
 > Open to remote AI / backend engineering roles, LATAM or global, paid in USD. GMT-3, with overlap-friendly hours for US East and EU West. Santa Catarina, Brazil.
 
@@ -48,11 +46,17 @@ A proxy that repairs broken tool calls from local LLMs (Ollama, LM Studio) befor
 
 `TypeScript` · LLM tool calling · JSON repair · reliability · local models
 
-## Product engineering
+## Products in production
 
-### forja · TypeScript
+### [AI Job Matcher](https://usematcher.com) · live in production
 
-A CV-builder SaaS with live preview and LaTeX-to-PDF export. CV parsing, ATS scoring and translation run on Groq / Llama 3.3 70B; the product also uses Better Auth, DB-backed sessions, rate limiting, Zod validation, Drizzle ORM and PostgreSQL.
+A browse-first remote tech job board that aggregates public sources into a deduplicated pool, with dynamic role, currency and engagement-scope filters and optional CV-fit ranking.
+
+`FastAPI` · `SQLite` · `vanilla JavaScript` · job matching
+
+### [Forja](https://forja.vitorplentz.com.br) · live in production
+
+An AI-assisted CV builder with live preview, ATS analysis, PT/EN translation and LaTeX PDF export. CV parsing, ATS scoring and translation run on Groq / Llama 3.3 70B; the product also uses Better Auth, DB-backed sessions, rate limiting, Zod validation, Drizzle ORM and PostgreSQL.
 
 `Hono` · `React` · `Vite` · `Better Auth` · `Drizzle ORM` · `PostgreSQL` · `Tectonic`
 
