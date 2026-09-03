@@ -1,6 +1,4 @@
-# Vitor Plentz · @Pl3ntz
-
-### AI Engineer · AI Platform Engineer · Forward Deployed Engineer
+# AI Engineer · AI Platform Engineer · Forward Deployed Engineer
 
 > Open to remote AI / backend engineering roles, LATAM or global, paid in USD. GMT-3, with overlap-friendly hours for US East and EU West. Santa Catarina, Brazil.
 
